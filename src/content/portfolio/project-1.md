@@ -1,5 +1,5 @@
 ---
-title: "واجهة زجاجية - مول تجاري"
+title: "مباني شركة إعمار في يعفور"
 image: "../../assets/project1.jpg"
 category: "تجاري"
 ---

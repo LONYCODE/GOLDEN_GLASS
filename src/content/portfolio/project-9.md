@@ -1,5 +1,5 @@
 ---
-title: "فواصل زجاجية - مكاتب"
+title: "المتحدة للتأمين مكاتب داخلية"
 image: "../../assets/project9.jpg"
-category: "سكني"
+category: "تجاري"
 ---

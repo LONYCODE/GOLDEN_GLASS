@@ -1,5 +1,6 @@
 ---
-title: "درابزين زجاجي - مكاتب"
-image: "../../assets/project8.jpg"
-category: "سكني"
+title: "skylight مول جرمانا"
+image: "../../assets/project8s.jpg"
+category: "تجاري"
 ---
+تم تنفيذ هذا المشروع باستخدام زجاج سيكوريت عالي الجودة مع مقاطع ألمنيوم خاصة.

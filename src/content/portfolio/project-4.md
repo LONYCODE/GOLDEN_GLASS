@@ -1,5 +1,5 @@
 ---
-title: "واجهة زجاجية - مول تجاري"
+title: "واجهات المتحدة للتأمين UIC"
 image: "../../assets/project4.jpg"
 category: "تجاري"
 ---

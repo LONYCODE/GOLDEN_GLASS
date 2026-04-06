@@ -1,5 +1,5 @@
 ---
-title: "واجهة زجاجية - مول تجاري"
+title: "واجهات مطعم five star في بغداد"
 image: "../../assets/project2.jpg"
 category: "تجاري"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "واجهة زجاجية - مول تجاري"
+title: "سوريا دمشق class mall"
 image: "../../assets/project6.jpg"
 category: "تجاري"
 ---

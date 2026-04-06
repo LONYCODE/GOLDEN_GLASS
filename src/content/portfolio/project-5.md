@@ -1,5 +1,5 @@
 ---
-title: "واجهة زجاجية - مول تجاري"
+title: "بنك سوريا و المهجر في حمص"
 image: "../../assets/project5.jpg"
 category: "تجاري"
 ---

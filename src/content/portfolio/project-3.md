@@ -1,5 +1,5 @@
 ---
-title: "واجهة زجاجية - مول تجاري"
+title: "واجهات شام ستي سنتر في دمشق"
 image: "../../assets/project3.jpg"
 category: "تجاري"
 ---

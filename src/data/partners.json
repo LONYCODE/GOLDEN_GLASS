@@ -1,8 +1,8 @@
 [
   { "name": "شام ستي سنتر", "icon": "🏢" },
   { "name": "بنك سوريا و المهجر", "icon": "🏗️" },
-  { "name": "جرمانا مول", "icon": "🏛️" },
+  { "name": "class mall", "icon": "🏛️" },
   { "name": "المتحدة للتأمين UIC", "icon": "📐" },
-  { "name": "Five Star منتجع", "icon": "📐" }
-
+  { "name": "Five Star منتجع", "icon": "📐" },
+  {"name": "شركة إعمار", "icon": "📐"}
 ]
