@@ -1,0 +1,67 @@
+---
+// استيراد بيانات الشركاء (سنستخدم الأسماء فقط ونتجاهل الأيقونات القديمة)
+import partners from '../data/partners.json';
+---
+
+<section class="py-16 bg-[#01060B] relative overflow-hidden border-t border-white/5 font-['IBM_Plex_Sans_Arabic']">
+  
+  <div class="container mx-auto px-6 mb-16 text-center relative z-10">
+    <h2 class="text-4xl md:text-5xl font-bold tracking-tighter inline-block relative text-white drop-shadow-[0_0_25px_rgba(90,200,250,0.5)]">
+      شركاء النجاح
+      <span class="absolute inset-0 bg-[#5AC8FA] blur-[30px] opacity-25 -z-10"></span>
+    </h2>
+  </div>
+
+  <div class="relative w-full flex overflow-hidden group">
+    
+    <div class="absolute inset-y-0 right-0 w-24 md:w-40 bg-gradient-to-l from-[#01060B] to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute inset-y-0 left-0 w-24 md:w-40 bg-gradient-to-r from-[#01060B] to-transparent z-10 pointer-events-none"></div>
+
+    <div class="flex animate-marquee-rtl group-hover:pause whitespace-nowrap">
+      {partners.map((partner) => (
+        <div class="mx-3 md:mx-5 flex-shrink-0">
+          <div class="px-8 py-5 rounded-2xl bg-[#5AC8FA]/[0.02] backdrop-blur-xl border border-white/5 hover:border-[#5AC8FA]/30 transition-all duration-500 flex items-center justify-center gap-3 group/card hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(90,200,250,0.15)] cursor-default">
+            
+            <span class="text-lg md:text-xl font-medium text-slate-300 group-hover/card:text-white transition-colors duration-500 tracking-wide">
+              {partner.name}
+            </span>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-[#5AC8FA] drop-shadow-[0_0_8px_rgba(90,200,250,0.8)] opacity-80 group-hover/card:opacity-100 transition-opacity duration-300">
+              <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+            </svg>
+
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="flex animate-marquee-rtl group-hover:pause whitespace-nowrap" aria-hidden="true">
+      {partners.map((partner) => (
+        <div class="mx-3 md:mx-5 flex-shrink-0">
+          <div class="px-8 py-5 rounded-2xl bg-[#5AC8FA]/[0.02] backdrop-blur-xl border border-white/5 hover:border-[#5AC8FA]/30 transition-all duration-500 flex items-center justify-center gap-3 group/card hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(90,200,250,0.15)] cursor-default">
+            <span class="text-lg md:text-xl font-medium text-slate-300 group-hover/card:text-white transition-colors duration-500 tracking-wide">{partner.name}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-[#5AC8FA] drop-shadow-[0_0_8px_rgba(90,200,250,0.8)] opacity-80 group-hover/card:opacity-100 transition-opacity duration-300">
+              <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .animate-marquee-rtl {
+    animation: marquee-rtl 35s linear infinite;
+  }
+  
+  .pause {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-rtl {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(100%); } 
+  }
+</style>

@@ -1,0 +1,57 @@
+---
+// استيراد دالة جلب المحتوى من Astro
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+// جلب جميع المشاريع من مجلد portfolio
+const projects = await getCollection('portfolio');
+---
+
+<section id="portfolio" class="py-24 bg-[#01060B] relative overflow-hidden font-['IBM_Plex_Sans_Arabic']">
+  
+  <div class="absolute top-0 right-1/4 w-[40%] h-[500px] bg-[#5AC8FA]/5 blur-[120px] pointer-events-none -z-10"></div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter inline-block relative text-white drop-shadow-[0_0_20px_rgba(90,200,250,0.3)] mb-4">
+        معرض <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#B58500]">أعمالنا</span>
+      </h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+        تصفح أحدث مشاريعنا المنجزة، حيث تلتقي دقة الهندسة مع فخامة الزجاج المقسى.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <article class="group relative rounded-2xl bg-[#5AC8FA]/[0.02] backdrop-blur-xl border border-white/5 overflow-hidden hover:border-[#5AC8FA]/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(90,200,250,0.1)]">
+          
+          <div class="relative h-64 overflow-hidden border-b border-white/5">
+            <Image 
+              src={project.data.image} 
+              alt={project.data.title} 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#01060B] via-transparent to-transparent opacity-80"></div>
+            
+            <span class="absolute top-4 right-4 bg-slate-900/60 backdrop-blur-md border border-white/10 text-[#D4AF37] text-sm px-3 py-1 rounded-full font-medium">
+              {project.data.category}
+            </span>
+          </div>
+
+          <div class="p-6 relative">
+             <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="w-[150%] h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out skew-x-12"></div>
+             </div>
+
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#5AC8FA] transition-colors">
+              {project.data.title}
+            </h3>
+          </div>
+
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>

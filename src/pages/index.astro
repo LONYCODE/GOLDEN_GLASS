@@ -1,0 +1,36 @@
+---
+import HeroSection from '../components/HeroSection.astro';
+import TrustBar from '../components/TrustBar.astro';
+import PortfolioSection from '../components/PortfolioSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="ar" dir="rtl" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Golden Glass | جولدن جلاس - للزجاج والمرايا</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-[#01060B] text-white">
+    
+	<Navbar />
+    <HeroSection />
+    <TrustBar />
+    <PortfolioSection />
+    
+    <ContactSection />
+	<Footer />
+
+
+  </body>
+</html>

@@ -1,0 +1,63 @@
+---
+const sandGoldGradient = "bg-gradient-to-r from-[#C6A355] via-[#F3E5AB] to-[#A47828]";
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#01060B] border-t border-white/5 pt-16 pb-8 relative overflow-hidden font-['IBM_Plex_Sans_Arabic']">
+  
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[50%] h-[100px] bg-[#5AC8FA]/5 blur-[80px] pointer-events-none"></div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center md:text-right">
+      
+      <div class="flex flex-col items-center md:items-start">
+        <a href="#" class="text-3xl font-bold tracking-tighter flex items-center gap-1 mb-4">
+          <span class="text-white drop-shadow-[0_0_10px_rgba(90,200,250,0.3)]">Glass</span>
+          <span class={`bg-clip-text text-transparent gold-shimmer ${sandGoldGradient}`}>Golden</span>
+
+        </a>
+        <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
+          نصنع الفخامة من الزجاج المقسى. حلول هندسية متكاملة للواجهات، الديكورات الداخلية، والمرايا بأعلى معايير الجودة العالمية.
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center md:items-start">
+        <h3 class="text-white font-bold text-lg mb-4 relative inline-block">
+          روابط سريعة
+          <span class="absolute -bottom-1 right-0 w-1/2 h-[2px] bg-[#D4AF37]/50 rounded-full"></span>
+        </h3>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">الرئيسية</a></li>
+          <li><a href="#portfolio" class="text-slate-400 hover:text-[#D4AF37] transition-colors text-sm">معرض أعمالنا</a></li>
+          <li><a href="#contact" class="text-slate-400 hover:text-[#5AC8FA] transition-colors text-sm">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col items-center md:items-start">
+        <h3 class="text-white font-bold text-lg mb-4 relative inline-block">
+          ساعات العمل
+          <span class="absolute -bottom-1 right-0 w-1/2 h-[2px] bg-[#5AC8FA]/50 rounded-full"></span>
+        </h3>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li>السبت - الخميس: 9:00 صباحاً - 6:00 مساءً</li>
+          <li>الجمعة: <span class="text-[#D4AF37]">مغلق</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+      <p>&copy; {currentYear} Golden Glass. جميع الحقوق محفوظة.</p>
+      <p class="flex items-center gap-1">
+        صُنع بشغف بواسطة <span class="text-[#5AC8FA]">مطور محترف</span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .gold-shimmer { background-size: 200% auto; animation: goldShine 6s linear infinite; }
+  @keyframes goldShine { to { background-position: 200% center; } }
+</style>

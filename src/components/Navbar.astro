@@ -1,0 +1,91 @@
+---
+const sandGoldGradient = "bg-gradient-to-r from-[#C6A355] via-[#F3E5AB] to-[#A47828]";
+---
+
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 font-['IBM_Plex_Sans_Arabic'] border-b border-white/5 bg-[#01060B]/80 backdrop-blur-xl">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+    
+    <a href="#" class="text-2xl font-bold tracking-tighter flex items-center gap-1 group z-50">
+              <span class="text-white relative drop-shadow-[0_0_10px_rgba(90,200,250,0.5)] transition-colors group-hover:text-[#5AC8FA]">
+        Glass
+      </span>
+      <span class={`bg-clip-text text-transparent gold-shimmer ${sandGoldGradient}`}>Golden</span>
+
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">الرئيسية</a>
+      <a href="#portfolio" class="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors">أعمالنا</a>
+      <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-[#5AC8FA] transition-colors">تواصل معنا</a>
+    </nav>
+
+    <div class="hidden md:block">
+      <a href="#contact" class="px-5 py-2 rounded-lg bg-[#5AC8FA]/10 border border-[#5AC8FA]/20 text-[#5AC8FA] text-sm font-bold hover:bg-[#5AC8FA] hover:text-[#01060B] transition-all duration-300 shadow-[0_0_15px_rgba(90,200,250,0.1)] hover:shadow-[0_0_20px_rgba(90,200,250,0.3)]">
+        طلب استشارة
+      </a>
+    </div>
+
+    <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none z-50 p-1">
+      <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 absolute top-1 right-1 opacity-0 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <div id="mobile-menu" class="absolute top-full right-0 w-full bg-[#01060B]/95 backdrop-blur-2xl border-b border-white/10 overflow-hidden transition-all duration-500 max-h-0 opacity-0 md:hidden flex flex-col px-6">
+      <nav class="flex flex-col gap-6 py-8">
+        <a href="#" class="mobile-link text-lg font-medium text-slate-200 hover:text-white transition-colors border-b border-white/5 pb-4">الرئيسية</a>
+        <a href="#portfolio" class="mobile-link text-lg font-medium text-slate-200 hover:text-[#D4AF37] transition-colors border-b border-white/5 pb-4">معرض أعمالنا</a>
+        <a href="#contact" class="mobile-link text-lg font-medium text-slate-200 hover:text-[#5AC8FA] transition-colors border-b border-white/5 pb-4">تواصل معنا</a>
+        <a href="#contact" class="mobile-link mt-4 px-5 py-3 text-center rounded-lg bg-[#5AC8FA]/10 border border-[#5AC8FA]/20 text-[#5AC8FA] font-bold">
+            للمزيد من التفاصيل  
+        </a>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+<style>
+  .gold-shimmer { background-size: 200% auto; animation: goldShine 6s linear infinite; }
+  @keyframes goldShine { to { background-position: 200% center; } }
+</style>
+
+<script>
+  // سكريبت للتحكم بفتح وإغلاق القائمة (بمثابة State Management)
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    if (isMenuOpen) {
+      mobileMenu.classList.remove('max-h-0', 'opacity-0');
+      mobileMenu.classList.add('max-h-[400px]', 'opacity-100');
+      iconOpen.classList.add('opacity-0');
+      iconClose.classList.remove('opacity-0');
+    } else {
+      mobileMenu.classList.add('max-h-0', 'opacity-0');
+      mobileMenu.classList.remove('max-h-[400px]', 'opacity-100');
+      iconOpen.classList.remove('opacity-0');
+      iconClose.classList.add('opacity-0');
+    }
+  }
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', toggleMenu);
+    
+    // إغلاق القائمة تلقائياً عند الضغط على أي رابط بداخلها
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isMenuOpen) toggleMenu();
+      });
+    });
+  }
+</script>
